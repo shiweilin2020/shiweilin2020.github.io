@@ -9,6 +9,27 @@
   </url>
   
   <url>
+    <loc>http://yoursite.com/2020/01/08/MarkDown-Note/</loc>
+    
+    <lastmod>2021-01-08</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2020/04/20/My-First-Blog-Post/</loc>
+    
+    <lastmod>2021-01-08</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2021/01/08/nodeJS%E4%BB%8B%E7%BB%8D/</loc>
+    
+    <lastmod>2021-01-08</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2021/01/08/nodeJs%E8%B5%B7%E6%AD%A5/</loc>
     
     <lastmod>2021-01-08</lastmod>
@@ -51,13 +72,6 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2021/01/08/nodeJS%E4%BB%8B%E7%BB%8D/</loc>
-    
-    <lastmod>2021-01-08</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://yoursite.com/2020/09/15/Webpack_Note-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE/</loc>
     
     <lastmod>2021-01-08</lastmod>
@@ -66,13 +80,6 @@
   
   <url>
     <loc>http://yoursite.com/2020/09/17/Webpack_Note-%E7%94%9F%E4%BA%A7%E7%8E%AF%E5%A2%83%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE/</loc>
-    
-    <lastmod>2021-01-08</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2020/04/20/My-First-Blog-Post/</loc>
     
     <lastmod>2021-01-08</lastmod>
     
@@ -88,7 +95,14 @@
 
   
   <url>
-    <loc>http://yoursite.com/tags/love-letter/</loc>
+    <loc>http://yoursite.com/tags/Hexo/</loc>
+    <lastmod>2021-01-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/tags/Markdown/</loc>
     <lastmod>2021-01-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -102,6 +116,13 @@
   </url>
   
   <url>
+    <loc>http://yoursite.com/tags/love-letter/</loc>
+    <lastmod>2021-01-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/tags/nodeJS/</loc>
     <lastmod>2021-01-08</lastmod>
     <changefreq>daily</changefreq>
@@ -109,14 +130,14 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/tags/viewport/</loc>
+    <loc>http://yoursite.com/tags/binary/</loc>
     <lastmod>2021-01-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://yoursite.com/tags/binary/</loc>
+    <loc>http://yoursite.com/tags/viewport/</loc>
     <lastmod>2021-01-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
