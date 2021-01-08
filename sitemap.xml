@@ -2,13 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://yoursite.com/2021/01/08/My-First-Blog-Post%20-%20%E5%89%AF%E6%9C%AC/</loc>
-    
-    <lastmod>2021-01-08</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://yoursite.com/2021/01/08/nodeJs%E8%B5%B7%E6%AD%A5/</loc>
     
     <lastmod>2021-01-08</lastmod>
@@ -102,14 +95,7 @@
 
   
   <url>
-    <loc>http://yoursite.com/tags/nodeJS/</loc>
-    <lastmod>2021-01-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/tags/love-letter/</loc>
+    <loc>http://yoursite.com/tags/Markdown/</loc>
     <lastmod>2021-01-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -123,6 +109,13 @@
   </url>
   
   <url>
+    <loc>http://yoursite.com/tags/love-letter/</loc>
+    <lastmod>2021-01-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/tags/Webpack/</loc>
     <lastmod>2021-01-08</lastmod>
     <changefreq>daily</changefreq>
@@ -130,7 +123,7 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/tags/binary/</loc>
+    <loc>http://yoursite.com/tags/nodeJS/</loc>
     <lastmod>2021-01-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -144,7 +137,7 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/tags/Markdown/</loc>
+    <loc>http://yoursite.com/tags/binary/</loc>
     <lastmod>2021-01-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
