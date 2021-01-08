@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>LSW_blog</title>
+  <title>Hexo博客(更换电脑) | LSW_blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="LSW_blog">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="1.拷贝原电脑相关文件建立hexo博客都会有一个独立的文件夹。电脑转移时安全的做法是将整个文件夹拷贝，这其中包括三个必备的文件：config.yml（站点配置_）、theme（主题文件夹）、source（博客内容文件）。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo博客(更换电脑)">
+<meta property="og:url" content="http://yoursite.com/2021/01/08/Hexo%E5%8D%9A%E5%AE%A2(%E6%9B%B4%E6%8D%A2%E7%94%B5%E8%84%91)/index.html">
 <meta property="og:site_name" content="LSW_blog">
+<meta property="og:description" content="1.拷贝原电脑相关文件建立hexo博客都会有一个独立的文件夹。电脑转移时安全的做法是将整个文件夹拷贝，这其中包括三个必备的文件：config.yml（站点配置_）、theme（主题文件夹）、source（博客内容文件）。">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-01-08T08:11:31.989Z">
+<meta property="article:modified_time" content="2021-01-08T08:08:36.325Z">
 <meta property="article:author" content="SW Lin">
 <meta name="twitter:card" content="summary">
   
@@ -150,16 +154,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-Hexo博客(更换电脑)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-Hexo博客(更换电脑)" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/01/08/Hexo%E5%8D%9A%E5%AE%A2(%E6%9B%B4%E6%8D%A2%E7%94%B5%E8%84%91)/">Hexo博客(更换电脑)</a>
+    <h1 class="article-title" itemprop="name">
+      Hexo博客(更换电脑)
     </h1>
   
 
@@ -172,185 +174,175 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="1-拷贝原电脑相关文件"><a href="#1-拷贝原电脑相关文件" class="headerlink" title="1.拷贝原电脑相关文件"></a>1.拷贝原电脑相关文件</h3><p>建立hexo博客都会有一个独立的文件夹。电脑转移时安全的做法是将整个文件夹拷贝，这其中包括三个<strong>必备的文件</strong>：config.yml（站点配置_）、theme（主题文件夹）、source（博客内容文件）。
-        
-          <a class="article-more-a" href="/2021/01/08/Hexo%E5%8D%9A%E5%AE%A2(%E6%9B%B4%E6%8D%A2%E7%94%B5%E8%84%91)/#more">more >></a>
-        
-      
+        <h3 id="1-拷贝原电脑相关文件"><a href="#1-拷贝原电脑相关文件" class="headerlink" title="1.拷贝原电脑相关文件"></a>1.拷贝原电脑相关文件</h3><p>建立hexo博客都会有一个独立的文件夹。电脑转移时安全的做法是将整个文件夹拷贝，这其中包括三个<strong>必备的文件</strong>：config.yml（站点配置_）、theme（主题文件夹）、source（博客内容文件）。<a id="more"></a><strong>次要文件</strong>：scaffolds（文章的模板）、package.json（使用包的说明文件）和.gitignore（限定在提交的时候哪些文件可以忽略）三个次要文件为自动生成的，因此丢失也不影响博客内容，后续在hexo init时会生成这三个文件。<strong>需要删除的文件</strong>：.git文件、node_modules（进行npm install会重新生成）、public（执行hexo g时会重新生成）、.deploy_git文件夹（执行hexo d时会重新生成）、db.json文件。其实上面这些可删除的文件即为.gitignore文件里面记载的可以忽略的内容。</p>
+<blockquote>
+<p><strong>总结</strong>：_config.yml、theme、source、scaffolds、package.json、.gitignore应该进行拷贝，.git/，node_modules/，public/，.deploy_git/，db.json文件需要删除</p>
+</blockquote>
+<h3 id="2-初始化环境"><a href="#2-初始化环境" class="headerlink" title="2.初始化环境"></a>2.初始化环境</h3><p>安装Node和Git环境。Windows环境下均有相关的exe可执行文件，两者的环境搭配均比较容易，特别的Node安装时自带有npm,可以方便执行后续的hexo安装。Hexo主要执行命令如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-cli -g</span><br><span class="line">$ hexo init &lt;your_blog_name&gt; <span class="comment"># your_blog_name 可以缺省,在博客文件夹内执行相关命令</span></span><br><span class="line">$ npm install</span><br><span class="line">123</span><br></pre></td></tr></table></figure>
 
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
+<h3 id="3-新建SSH-Key"><a href="#3-新建SSH-Key" class="headerlink" title="3.新建SSH Key"></a>3.新建SSH Key</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C <span class="string">"GitHub邮箱名"</span></span><br><span class="line">1</span><br></pre></td></tr></table></figure>
 
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/01/08/Hexo%E5%8D%9A%E5%AE%A2(%E6%9B%B4%E6%8D%A2%E7%94%B5%E8%84%91)/">展开全文 >></a>
-        </p>
-      
+<p>之后会出现：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Generating public/private rsa key pair.</span><br><span class="line">Enter file <span class="keyword">in</span> <span class="built_in">which</span> to save the key (/c/Users/jacky/.ssh/id_rsa):</span><br><span class="line">12</span><br></pre></td></tr></table></figure>
 
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
+<p>直接回车就可以。<br>然后会出现：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Enter passphrase (empty <span class="keyword">for</span> no passphrase):</span><br><span class="line">Enter same passphrase again:</span><br><span class="line">12</span><br></pre></td></tr></table></figure>
 
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
+<p>要求你输入密码，这个密码会在你提交项目时使用，如果为空的话提交项目时则不用输入。这个设置是防止别人往你的项目里提交内容。</p>
+<p>注意：输入密码的时候没有*字样的，直接输入就好。<br>然后会出现：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">Your identification has been saved <span class="keyword">in</span> /c/Users/jacky/.ssh/id_rsa.</span><br><span class="line">Your public key has been saved <span class="keyword">in</span> /c/Users/jacky/.ssh/id_rsa.pub.</span><br><span class="line">The key fingerprint is:</span><br><span class="line">65:58:······02:4b emailname@email.com</span><br><span class="line">The key<span class="string">'s randomart image is:</span></span><br><span class="line"><span class="string">+--[ RSA 2048]----+</span></span><br><span class="line"><span class="string">|                 |</span></span><br><span class="line"><span class="string">|       .   o .   |</span></span><br><span class="line"><span class="string">|    . o o = o    |</span></span><br><span class="line"><span class="string">|   . o * = o     |</span></span><br><span class="line"><span class="string">|  E  o + o .     |</span></span><br><span class="line"><span class="string">| . o.   . .      |</span></span><br><span class="line"><span class="string">|     ..          |</span></span><br><span class="line"><span class="string">+-----------------+</span></span><br><span class="line"><span class="string">1234567891011121314</span></span><br></pre></td></tr></table></figure>
 
+<p>至此，密钥已在本地成功生成。</p>
+<h3 id="4-添加SSH-Key"><a href="#4-添加SSH-Key" class="headerlink" title="4.添加SSH Key"></a>4.添加SSH Key</h3><ul>
+<li>打开本地文件：id_rsa.pub（文件路径可以在上一步SSH生成成功后看到路径，具体在’Your public key has been saved in’后面），可以将这个文件在编辑器中打开，然后全选复制</li>
+<li>登陆github，点击头像位置处 Settings ——&gt; SSH and GPG keys,点击新建SSH Key</li>
+<li>将复制的内容全部粘贴在Key文本框内，title填不填均可</li>
+</ul>
+<h3 id="5-测试设置是否成功"><a href="#5-测试设置是否成功" class="headerlink" title="5.测试设置是否成功"></a>5.测试设置是否成功</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br></pre></td></tr></table></figure>
 
+<p>有可能会出现：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">The authenticity of host <span class="string">'github.com (192.156.***.19)'</span> can<span class="string">'t be established.</span></span><br><span class="line"><span class="string">RSA key fingerprint is 36:27:ac:a5:76:28:2d:45:63:1b:56:4d:eb:df:a6:48.</span></span><br><span class="line"><span class="string">Are you sure you want to continue connecting (yes/no)?</span></span><br></pre></td></tr></table></figure>
+
+<p>或者是</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">The authenticity of host <span class="string">'github.com (192.156.***.19)'</span> can<span class="string">'t be established.</span></span><br><span class="line"><span class="string">RSA key fingerprint is nThbg***********************8.</span></span><br><span class="line"><span class="string">Are you sure you want to continue connecting (yes/no)?</span></span><br></pre></td></tr></table></figure>
+
+<p>这种情况下，直接 yes 回车。</p>
+<p>然后会出现：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hi username! You<span class="string">'ve successfully authenticated, but GitHub does not provide shell access.</span></span><br></pre></td></tr></table></figure>
+
+<p>至此，设置成功。</p>
+<h3 id="6-设置用户信息"><a href="#6-设置用户信息" class="headerlink" title="6.设置用户信息"></a>6.设置用户信息</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global user.name <span class="string">"用户名"</span></span><br><span class="line">$ git config --global user.email  <span class="string">"你希望的邮箱名"</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="7-正常Hexo命令操作"><a href="#7-正常Hexo命令操作" class="headerlink" title="7.正常Hexo命令操作"></a>7.正常Hexo命令操作</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo s <span class="comment"># http://localhost:3000/预览</span></span><br><span class="line">$ hexo g <span class="comment"># 编译</span></span><br><span class="line">$ hexo d <span class="comment"># 发布</span></span><br></pre></td></tr></table></figure>
 
 
-  
-    <article id="post-nodeJs起步" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/01/08/nodeJs%E8%B5%B7%E6%AD%A5/">nodeJs起步</a>
-    </h1>
-  
 
-        
-        <a href="/2021/01/08/nodeJs%E8%B5%B7%E6%AD%A5/" class="archive-article-date">
-  	<time datetime="2021-01-08T05:26:18.354Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-08</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="起步"><a href="#起步" class="headerlink" title="起步"></a>起步</h1><h2 id="安装Node环境"><a href="#安装Node环境" class="headerlink" title="安装Node环境"></a>安装Node环境</h2><ul>
-<li><p>下载：<a href="https://nodejs.org/en/" target="_blank" rel="noopener">https://nodejs.org/en/</a></p>
-</li>
-<li><p>安装：</p>
+<h1 id="遇到错误解决方案："><a href="#遇到错误解决方案：" class="headerlink" title="遇到错误解决方案："></a>遇到错误解决方案：</h1><h3 id="ERROR-Deployer-not-found-git"><a href="#ERROR-Deployer-not-found-git" class="headerlink" title="ERROR Deployer not found: git"></a>ERROR Deployer not found: git</h3><p>执行 npm install hexo-deployer-git –save</p>
+<h3 id="关于部署HEXO博客到github时，提示typeError-ERR-INVALID-ARG-TYPE-The-“mode”-argument-must-be-integer-Recei…"><a href="#关于部署HEXO博客到github时，提示typeError-ERR-INVALID-ARG-TYPE-The-“mode”-argument-must-be-integer-Recei…" class="headerlink" title="关于部署HEXO博客到github时，提示typeError [ERR_INVALID_ARG_TYPE]: The “mode” argument must be integer. Recei…"></a>关于部署HEXO博客到github时，提示typeError [ERR_INVALID_ARG_TYPE]: The “mode” argument must be integer. Recei…</h3><p> 应该是node版本过高导致的（我用的是v14.8.0），将node版本换为v12.16.2版本后，部署就成功了！</p>
+<p>如果你的其他项目中有需要使用高版本的node，那么你可以使用nvm来进行node版本切换。</p>
+<p>推荐使用nvm，可在<a href="https://github.com/coreybutler/nvm-windows/releases" target="_blank" rel="noopener">点此在github</a>上下载windows版本。打开网址我们可以看到有两个版本：</p>
 <ul>
-<li><p>傻瓜式安装，一路<code>next</code></p>
+<li><p>nvm-noinstall.zip：绿色免安装版，但使用时需进行配置。</p>
 </li>
-<li><p>安装过再次安装会升级</p>
-        
-          <a class="article-more-a" href="/2021/01/08/nodeJs%E8%B5%B7%E6%AD%A5/#more">more >></a>
-        
-      
+<li><p>nvm-setup.zip：安装版，推荐使用</p>
+<p>安装后：</p>
+<p>  1、查看本地安装的所有版本；有可选参数available，显示所有可下载的版本。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvm list [available]</span><br></pre></td></tr></table></figure>
 
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
+<p>  2、安装，命令中的版本号可自定义，具体参考命令1查询出来的列表</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvm install 11.13.0</span><br></pre></td></tr></table></figure>
 
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/01/08/nodeJs%E8%B5%B7%E6%AD%A5/">展开全文 >></a>
-        </p>
-      
+<p>  3、使用特定版本</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvm use 11.13.0</span><br></pre></td></tr></table></figure>
 
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
+<p>  4、卸载</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvm uninstall 11.13.0</span><br></pre></td></tr></table></figure>
 
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-nodeJS介绍" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/01/08/nodeJS%E4%BB%8B%E7%BB%8D/">nodeJS介绍</a>
-    </h1>
-  
-
-        
-        <a href="/2021/01/08/nodeJS%E4%BB%8B%E7%BB%8D/" class="archive-article-date">
-  	<time datetime="2021-01-08T03:23:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-08</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Node介绍"><a href="#Node介绍" class="headerlink" title="Node介绍"></a>Node介绍</h1><h2 id="为什么要学习Node-js"><a href="#为什么要学习Node-js" class="headerlink" title="为什么要学习Node.js"></a>为什么要学习Node.js</h2><ul>
-<li><p>企业岗位需求</p>
-<ul>
-<li><p>具有服务端开发经验更改</p>
 </li>
-<li><p>front-end</p>
-</li>
-<li><p>back-end</p>
-        
-          <a class="article-more-a" href="/2021/01/08/nodeJS%E4%BB%8B%E7%BB%8D/#more">more >></a>
-        
+</ul>
+<h3 id="nvm-install-11-13-0-时"><a href="#nvm-install-11-13-0-时" class="headerlink" title="nvm install 11.13.0 时"></a>nvm install 11.13.0 时</h3><h3 id="Could-not-retrieve-https-nodejs-org-dist-latest-SHASUMS256-txt"><a href="#Could-not-retrieve-https-nodejs-org-dist-latest-SHASUMS256-txt" class="headerlink" title="Could not retrieve https://nodejs.org/dist/latest/SHASUMS256.txt."></a>Could not retrieve <a href="https://nodejs.org/dist/latest/SHASUMS256.txt" target="_blank" rel="noopener">https://nodejs.org/dist/latest/SHASUMS256.txt</a>.</h3><h3 id="Get-https-nodejs-org-dist-latest-SHASUMS256-txt-net-http-TLS-handshake-timeout"><a href="#Get-https-nodejs-org-dist-latest-SHASUMS256-txt-net-http-TLS-handshake-timeout" class="headerlink" title="Get https://nodejs.org/dist/latest/SHASUMS256.txt: net/http: TLS handshake timeout"></a>Get <a href="https://nodejs.org/dist/latest/SHASUMS256.txt" target="_blank" rel="noopener">https://nodejs.org/dist/latest/SHASUMS256.txt</a>: net/http: TLS handshake timeout</h3><p>修改nvm下的<code>settings.txt</code>文件，在最后新增两行：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">node_mirror: https:&#x2F;&#x2F;npm.taobao.org&#x2F;mirrors&#x2F;node&#x2F;</span><br><span class="line">npm_mirror: https:&#x2F;&#x2F;npm.taobao.org&#x2F;mirrors&#x2F;npm&#x2F;</span><br></pre></td></tr></table></figure>
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>Thank you<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">nodeJS</a>
-        		</li>
-      		
-		</ul>
-	</div>
+      
 
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/01/08/nodeJS%E4%BB%8B%E7%BB%8D/">展开全文 >></a>
-        </p>
-      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
 
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2021/01/08/Hexo%E5%8D%9A%E5%AE%A2(%E6%9B%B4%E6%8D%A2%E7%94%B5%E8%84%91)/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2021/01/08/nodeJs%E8%B5%B7%E6%AD%A5/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">nodeJs起步</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -370,556 +362,14 @@
 
 
 
-
-  
-    <article id="post-Webpack-笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/09/27/Webpack-%E7%AC%94%E8%AE%B0/">Webpack_Note</a>
-    </h1>
-  
-
-        
-        <a href="/2020/09/27/Webpack-%E7%AC%94%E8%AE%B0/" class="archive-article-date">
-  	<time datetime="2020-09-27T14:38:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="一、Webpack-简介"><a href="#一、Webpack-简介" class="headerlink" title="一、Webpack 简介"></a>一、Webpack 简介</h3><p>–1.1 webpack 是什么？<br>webpack 是一种前端资源构建工具，一个静态模块打包器(module bundler)。<br>在webpack 看来, 前端的所有资源文件(js/json/css/img/less/…)都会作为模块处理。<br>它将根据模块的依赖关系进行静态分析，打包生成对应的静态资源(bundle)。</p>
-        
-          <a class="article-more-a" href="/2020/09/27/Webpack-%E7%AC%94%E8%AE%B0/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Webpack</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/09/27/Webpack-%E7%AC%94%E8%AE%B0/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Webpack_Note-详细配置" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/09/22/Webpack_Note-%E8%AF%A6%E7%BB%86%E9%85%8D%E7%BD%AE/">Webpack_Note-配置详情</a>
-    </h1>
-  
-
-        
-        <a href="/2020/09/22/Webpack_Note-%E8%AF%A6%E7%BB%86%E9%85%8D%E7%BD%AE/" class="archive-article-date">
-  	<time datetime="2020-09-21T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-22</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="Webpack-配置详情"><a href="#Webpack-配置详情" class="headerlink" title="Webpack 配置详情"></a>Webpack 配置详情</h3><p>6.1 entry<br>entry: 入口起点</p>
-<ol>
-<li><p>string –&gt; ‘./src/index.js’，单入口<br>打包形成一个 chunk。 输出一个 bundle 文件。此时 chunk 的名称默认是 main</p>
-        
-          <a class="article-more-a" href="/2020/09/22/Webpack_Note-%E8%AF%A6%E7%BB%86%E9%85%8D%E7%BD%AE/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Webpack</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/09/22/Webpack_Note-%E8%AF%A6%E7%BB%86%E9%85%8D%E7%BD%AE/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Webpack_Note-优化配置" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/09/20/Webpack_Note-%E4%BC%98%E5%8C%96%E9%85%8D%E7%BD%AE/">Webpack_Note-优化配置</a>
-    </h1>
-  
-
-        
-        <a href="/2020/09/20/Webpack_Note-%E4%BC%98%E5%8C%96%E9%85%8D%E7%BD%AE/" class="archive-article-date">
-  	<time datetime="2020-09-19T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-20</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="Webpack-优化配置"><a href="#Webpack-优化配置" class="headerlink" title="Webpack 优化配置"></a>Webpack 优化配置</h3><p>5.1 开发环境性能优化<br>5.1.1 HMR（模块热替换）<br>HMR: hot module replacement 热模块替换 / 模块热替换<br>作用：一个模块发生变化，只会重新打包构建这一个模块（而不是打包所有模块） ，极大提升构建速度</p>
-        
-          <a class="article-more-a" href="/2020/09/20/Webpack_Note-%E4%BC%98%E5%8C%96%E9%85%8D%E7%BD%AE/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Webpack</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/09/20/Webpack_Note-%E4%BC%98%E5%8C%96%E9%85%8D%E7%BD%AE/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Webpack_Note-生产环境基本配置" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/09/17/Webpack_Note-%E7%94%9F%E4%BA%A7%E7%8E%AF%E5%A2%83%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE/">Webpack_Note-生产环境基本配置</a>
-    </h1>
-  
-
-        
-        <a href="/2020/09/17/Webpack_Note-%E7%94%9F%E4%BA%A7%E7%8E%AF%E5%A2%83%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE/" class="archive-article-date">
-  	<time datetime="2020-09-16T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-17</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="Webpack-生产环境的基本配置"><a href="#Webpack-生产环境的基本配置" class="headerlink" title="Webpack 生产环境的基本配置"></a>Webpack 生产环境的基本配置</h3><p>而生产环境的配置需要考虑以下几个方面：<br>•    提取 css 成单独文件<br>•    css 兼容性处理<br>•    压缩 css</p>
-        
-          <a class="article-more-a" href="/2020/09/17/Webpack_Note-%E7%94%9F%E4%BA%A7%E7%8E%AF%E5%A2%83%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Webpack</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/09/17/Webpack_Note-%E7%94%9F%E4%BA%A7%E7%8E%AF%E5%A2%83%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Webpack_Note-开发环境基本配置" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/09/15/Webpack_Note-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE/">Webpack_Note-开发环境基本配置</a>
-    </h1>
-  
-
-        
-        <a href="/2020/09/15/Webpack_Note-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE/" class="archive-article-date">
-  	<time datetime="2020-09-14T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="Webpack-开发环境的基本配置"><a href="#Webpack-开发环境的基本配置" class="headerlink" title="Webpack 开发环境的基本配置"></a>Webpack 开发环境的基本配置</h3><p>webpack.config.js 是 webpack 的配置文件。<br>作用: 指示 webpack 干哪些活（当你运行 webpack 指令时，会加载里面的配置）<br>所有构建工具都是基于 nodejs 平台运行的，模块化默认采用 commonjs。<br>开发环境配置主要是为了能让代码运行。主要考虑以下几个方面：</p>
-        
-          <a class="article-more-a" href="/2020/09/15/Webpack_Note-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Webpack</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/09/15/Webpack_Note-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-视口" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/05/20/%E8%A7%86%E5%8F%A3/">视口的理解</a>
-    </h1>
-  
-
-        
-        <a href="/2020/05/20/%E8%A7%86%E5%8F%A3/" class="archive-article-date">
-  	<time datetime="2020-05-20T01:24:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-20</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="像素："><a href="#像素：" class="headerlink" title="像素："></a>像素：</h3><pre><code>- 屏幕是由一个一个发光的小点构成，这一个个的小点就是像素
-- 分辨率：1920 x 1080 说的就是屏幕中小点的数量
-- 在前端开发中像素要分成两种情况讨论：CSS像素 和 物理像素
-- 物理像素，上述所说的小点点就属于物理像素
-- CSS像素，编写网页时，我们所用像素都是CSS像素
-        - 浏览器在显示网页时，需要将CSS像素转换为物理像素然后再呈现
-        - 一个css像素最终由几个物理像素显示，由浏览器决定：
-        默认情况下在pc端，一个css像素 = 一个物理像素</code></pre>
-        
-          <a class="article-more-a" href="/2020/05/20/%E8%A7%86%E5%8F%A3/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">viewport</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/05/20/%E8%A7%86%E5%8F%A3/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-负数在计算机的存储" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/29/%E8%B4%9F%E6%95%B0%E5%9C%A8%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E5%AD%98%E5%82%A8/">负数在计算机的存储</a>
-    </h1>
-  
-
-        
-        <a href="/2020/04/29/%E8%B4%9F%E6%95%B0%E5%9C%A8%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E5%AD%98%E5%82%A8/" class="archive-article-date">
-  	<time datetime="2020-04-29T04:54:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-29</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="二进制在计算机中存储负数时为何要用补码？"><a href="#二进制在计算机中存储负数时为何要用补码？" class="headerlink" title="二进制在计算机中存储负数时为何要用补码？"></a>二进制在计算机中存储负数时为何要用补码？</h2><p>  首先我们知道最高位的二进制位是用来表示正负 1为负，0为正<br>（在计算机中为32位或者64位二进制存储，我这边用8位二进制作为演示）<br>例如：</p>
-<ul>
-<li>8 二进制为 0000 1000</li>
-<li>8 二进制为 1000 1000<br>如果是直接相加的话 1001 0000 转化为十进制等于-16 显然不对，这说明直接用原码做计算会出错；
-        
-          <a class="article-more-a" href="/2020/04/29/%E8%B4%9F%E6%95%B0%E5%9C%A8%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E5%AD%98%E5%82%A8/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">binary</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/29/%E8%B4%9F%E6%95%B0%E5%9C%A8%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E5%AD%98%E5%82%A8/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
-    </nav>
+  
+
+  
+
+  
+
   
 
 
@@ -942,8 +392,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
