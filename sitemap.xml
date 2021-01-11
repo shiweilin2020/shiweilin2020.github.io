@@ -137,14 +137,14 @@
 
   
   <url>
-    <loc>http://yoursite.com/tags/Markdown/</loc>
+    <loc>http://yoursite.com/tags/Nodejs-Express/</loc>
     <lastmod>2021-01-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://yoursite.com/tags/Hexo/</loc>
+    <loc>http://yoursite.com/tags/Markdown/</loc>
     <lastmod>2021-01-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -158,7 +158,14 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/tags/Webpack/</loc>
+    <loc>http://yoursite.com/tags/Nodejs-MongoDB/</loc>
+    <lastmod>2021-01-11</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/tags/Nodejs-MySQL/</loc>
     <lastmod>2021-01-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -166,6 +173,27 @@
   
   <url>
     <loc>http://yoursite.com/tags/nodeJS/</loc>
+    <lastmod>2021-01-11</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/tags/Hexo/</loc>
+    <lastmod>2021-01-11</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/tags/Webpack/</loc>
+    <lastmod>2021-01-11</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/tags/nodeJS-npm/</loc>
     <lastmod>2021-01-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -180,34 +208,6 @@
   
   <url>
     <loc>http://yoursite.com/tags/binary/</loc>
-    <lastmod>2021-01-11</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/tags/Nodejs-MongoDB/</loc>
-    <lastmod>2021-01-11</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/tags/Nodejs-Express/</loc>
-    <lastmod>2021-01-11</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/tags/Nodejs-MySQL/</loc>
-    <lastmod>2021-01-11</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/tags/nodeJS-npm/</loc>
     <lastmod>2021-01-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
