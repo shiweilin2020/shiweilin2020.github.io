@@ -6,19 +6,14 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Webpack_Note-生产环境基本配置 | LSW_blog</title>
+  <title>Tag: Nodejs,MongoDB | LSW_blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Webpack 生产环境的基本配置而生产环境的配置需要考虑以下几个方面：•    提取 css 成单独文件•    css 兼容性处理•    压缩 css">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Webpack_Note-生产环境基本配置">
-<meta property="og:url" content="http://yoursite.com/2020/09/17/Webpack_Note-%E7%94%9F%E4%BA%A7%E7%8E%AF%E5%A2%83%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="LSW_blog">
+<meta property="og:url" content="http://yoursite.com/tags/Nodejs-MongoDB/index.html">
 <meta property="og:site_name" content="LSW_blog">
-<meta property="og:description" content="Webpack 生产环境的基本配置而生产环境的配置需要考虑以下几个方面：•    提取 css 成单独文件•    css 兼容性处理•    压缩 css">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-09-16T16:00:00.000Z">
-<meta property="article:modified_time" content="2021-01-08T03:37:11.832Z">
 <meta property="article:author" content="SW Lin">
-<meta property="article:tag" content="Webpack">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="LSW_blog" type="application/atom+xml">
@@ -155,182 +150,60 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Webpack_Note-生产环境基本配置" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      Webpack_Note-生产环境基本配置
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2021" class="archive-year">2021</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2021/01/11/Nodejs%E4%B8%ADMongoDB%E7%9A%84%E4%BD%BF%E7%94%A8/" class="archive-article-date">
+  	<time datetime="2021-01-11T14:46:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-11</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2021/01/11/Nodejs%E4%B8%ADMongoDB%E7%9A%84%E4%BD%BF%E7%94%A8/">Nodejs中MongoDB的使用</a>
     </h1>
   
 
-        
-        <a href="/2020/09/17/Webpack_Note-%E7%94%9F%E4%BA%A7%E7%8E%AF%E5%A2%83%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE/" class="archive-article-date">
-  	<time datetime="2020-09-16T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-17</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="Webpack-生产环境的基本配置"><a href="#Webpack-生产环境的基本配置" class="headerlink" title="Webpack 生产环境的基本配置"></a>Webpack 生产环境的基本配置</h3><p>而生产环境的配置需要考虑以下几个方面：<br>•    提取 css 成单独文件<br>•    css 兼容性处理<br>•    压缩 css</p>
-<a id="more"></a>
-<p>•    js 语法检查<br>•    js 兼容性处理<br>•    js 压缩<br>•    html 压缩</p>
-<p>下面是一个基本的生产环境下的webpack.config.js配置</p>
-  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> MiniCssExtractorPlugin = <span class="built_in">require</span>(<span class="string">'mini-css-extract-plugin'</span>)</span><br><span class="line"><span class="keyword">const</span> OptimiziCssAssetsWebpackPlugin = <span class="built_in">require</span>(<span class="string">'optimizi-css-assets-webpack-plugin'</span>)</span><br><span class="line"><span class="keyword">const</span> HtmlWebpackPlugin = <span class="built_in">require</span>(<span class="string">'html-webpack-plugin'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 定义node.js的环境变量，决定使用browserslist的哪个环境</span></span><br><span class="line">process.env.NODE_ENV = <span class="string">'production'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 复用loader的写法</span></span><br><span class="line"><span class="keyword">const</span> commonCssLoader = [</span><br><span class="line">    <span class="comment">// 这个loader取代style-loader。作用：提取js中的css成单独文件然后通过link加载</span></span><br><span class="line">    MiniCssExtractPlugin.loader,</span><br><span class="line">    <span class="comment">// css-loader：将css文件整合到js文件中</span></span><br><span class="line">    <span class="comment">// 经过css-loader处理后，样式文件是在js文件中的</span></span><br><span class="line">    <span class="comment">// 问题：1.js文件体积会很大2.需要先加载js再动态创建style标签，样式渲染速度就慢，会出现闪屏现象</span></span><br><span class="line">    <span class="comment">// 解决：用MiniCssExtractPlugin.loader替代style-loader</span></span><br><span class="line">    <span class="string">'css-loader'</span>,</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">      postcss-loader：css兼容性处理：postcss --&gt; 需要安装：postcss-loader postcss-preset-env</span></span><br><span class="line"><span class="comment">      postcss需要通过package.json中browserslist里面的配置加载指定的css兼容性样式</span></span><br><span class="line"><span class="comment">      在package.json中定义browserslist：</span></span><br><span class="line"><span class="comment">      "browserslist": &#123;</span></span><br><span class="line"><span class="comment">        // 开发环境 --&gt; 设置node环境变量：process.env.NODE_ENV = development</span></span><br><span class="line"><span class="comment">        "development": [ // 只需要可以运行即可</span></span><br><span class="line"><span class="comment">          "last 1 chrome version",</span></span><br><span class="line"><span class="comment">          "last 1 firefox version",</span></span><br><span class="line"><span class="comment">          "last 1 safari version"</span></span><br><span class="line"><span class="comment">        ],</span></span><br><span class="line"><span class="comment">        // 生产环境。默认是生产环境</span></span><br><span class="line"><span class="comment">        "production": [ // 需要满足绝大多数浏览器的兼容</span></span><br><span class="line"><span class="comment">          "&gt;0.2%",</span></span><br><span class="line"><span class="comment">          "not dead",</span></span><br><span class="line"><span class="comment">          "not op_mini all"</span></span><br><span class="line"><span class="comment">        ]</span></span><br><span class="line"><span class="comment">      &#125;,</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    &#123;</span><br><span class="line">        loader: <span class="string">'postcss-loader'</span>,</span><br><span class="line">        options: &#123;</span><br><span class="line">            ident: <span class="string">'postcss'</span>, <span class="comment">// 基本写法</span></span><br><span class="line">            plugins: <span class="function"><span class="params">()</span> =&gt;</span> [</span><br><span class="line">                <span class="comment">// postcss的插件</span></span><br><span class="line">                <span class="built_in">require</span>(<span class="string">'postcss-preset-env'</span>)(),</span><br><span class="line">            ],</span><br><span class="line">        &#125;,</span><br><span class="line">    &#125;,</span><br><span class="line">]</span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    entry: <span class="string">'./src/js/index.js'</span>,</span><br><span class="line">    output: &#123;</span><br><span class="line">        filename: <span class="string">'js/built.js'</span>,</span><br><span class="line">        path: resolve(__dirname, <span class="string">'build'</span>),</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="built_in">module</span>: &#123;</span><br><span class="line">        rules: [</span><br><span class="line">            &#123;</span><br><span class="line">                test: <span class="regexp">/\.css$/</span>,</span><br><span class="line">                use: [...commonCssLoader],</span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                test: <span class="regexp">/\.less$/</span>,</span><br><span class="line">                use: [...commonCssLoader, <span class="string">'less-loader'</span>],</span><br><span class="line">            &#125;,</span><br><span class="line">            <span class="comment">/*</span></span><br><span class="line"><span class="comment">              正常来讲，一个文件只能被一个loader处理</span></span><br><span class="line"><span class="comment">              当一个文件要被多个loader处理，那么一定要指定loader执行的先后顺序</span></span><br><span class="line"><span class="comment">              先执行eslint再执行babel（用enforce）</span></span><br><span class="line"><span class="comment">            */</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="comment">/*</span></span><br><span class="line"><span class="comment">                  js的语法检查： 需要下载 eslint-loader eslint</span></span><br><span class="line"><span class="comment">                  注意：只检查自己写的源代码，第三方的库是不用检查的</span></span><br><span class="line"><span class="comment">                  airbnb(一个流行的js风格) --&gt; 需要下载 eslint-config-airbnb-base eslint-plugin-import</span></span><br><span class="line"><span class="comment">                  设置检查规则：</span></span><br><span class="line"><span class="comment">                    package.json中eslintConfig中设置</span></span><br><span class="line"><span class="comment">                      "eslintConfig": &#123;</span></span><br><span class="line"><span class="comment">                        "extends": "airbnb-base"， // 继承airbnb的风格规范</span></span><br><span class="line"><span class="comment">                        "env": &#123;</span></span><br><span class="line"><span class="comment">                          "browser": true // 可以使用浏览器中的全局变量(使用window不会报错)</span></span><br><span class="line"><span class="comment">                        &#125;</span></span><br><span class="line"><span class="comment">                      &#125;</span></span><br><span class="line"><span class="comment">                */</span></span><br><span class="line">                test: <span class="regexp">/\.js$/</span>,</span><br><span class="line">                exclude: <span class="regexp">/node_modules/</span>, <span class="comment">// 忽略node_modules</span></span><br><span class="line">                enforce: <span class="string">'pre'</span>, <span class="comment">// 优先执行</span></span><br><span class="line">                loader: <span class="string">'eslint-loader'</span>,</span><br><span class="line">                options: &#123;</span><br><span class="line">                    <span class="comment">// 自动修复</span></span><br><span class="line">                    fix: <span class="literal">true</span>,</span><br><span class="line">                &#125;,</span><br><span class="line">            &#125;,</span><br><span class="line">            <span class="comment">/*</span></span><br><span class="line"><span class="comment">              js兼容性处理：需要下载 babel-loader @babel/core</span></span><br><span class="line"><span class="comment">  </span></span><br><span class="line"><span class="comment">                   1. 基本js兼容性处理 --&gt; @babel/preset-env</span></span><br><span class="line"><span class="comment">                           问题：只能转换基本语法，如promise高级语法不能转换</span></span><br><span class="line"><span class="comment">                            2. 全部js兼容性处理 --&gt; @babel/polyfill</span></span><br><span class="line"><span class="comment">                                   问题：只要解决部分兼容性问题，但是将所有兼容性代码全部引入，体积太大了</span></span><br><span class="line"><span class="comment">                                    3. 需要做兼容性处理的就做：按需加载  --&gt; core-js</span></span><br><span class="line"><span class="comment">                                    */</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="comment">// 第三种方式：按需加载</span></span><br><span class="line">                test: <span class="regexp">/\.js$/</span>,</span><br><span class="line">                exclude: <span class="regexp">/node_modules/</span>,</span><br><span class="line">                loader: <span class="string">'babel-loader'</span>,</span><br><span class="line">                options: &#123;</span><br><span class="line">                    <span class="comment">// 预设：指示babel做怎样的兼容性处理</span></span><br><span class="line">                    presets: [</span><br><span class="line">                        <span class="string">'@babel/preset-env'</span>, <span class="comment">// 基本预设</span></span><br><span class="line">                        &#123;</span><br><span class="line">                            useBuiltIns: <span class="string">'usage'</span>, <span class="comment">//按需加载</span></span><br><span class="line">                            corejs: &#123; <span class="attr">version</span>: <span class="number">3</span> &#125;, <span class="comment">// 指定core-js版本</span></span><br><span class="line">                            targets: &#123; <span class="comment">// 指定兼容到什么版本的浏览器</span></span><br><span class="line">                                chrome: <span class="string">'60'</span>,</span><br><span class="line">                                firefox: <span class="string">'50'</span>,</span><br><span class="line">                                ie: <span class="string">'9'</span>,</span><br><span class="line">                                safari: <span class="string">'10'</span>,</span><br><span class="line">                                edge: <span class="string">'17'</span></span><br><span class="line">                            &#125;,</span><br><span class="line">                        &#125;,</span><br><span class="line">                    ],</span><br><span class="line">                &#125;,</span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="comment">// 图片处理</span></span><br><span class="line">                test: <span class="regexp">/\.(jpg|png|gif)/</span>,</span><br><span class="line">                loader: <span class="string">'url-loader'</span>,</span><br><span class="line">                options: &#123;</span><br><span class="line">                    limit: <span class="number">8</span> * <span class="number">1024</span>,</span><br><span class="line">                    name: <span class="string">'[hash:10].[ext]'</span>,</span><br><span class="line">                    outputPath: <span class="string">'imgs'</span>,</span><br><span class="line">                    esModule: <span class="literal">false</span>, <span class="comment">// 关闭url-loader默认使用的es6模块化解析</span></span><br><span class="line">                &#125;,</span><br><span class="line">            &#125;,</span><br><span class="line">            <span class="comment">// html中的图片处理</span></span><br><span class="line">            &#123;</span><br><span class="line">                test: <span class="regexp">/\.html$/</span>,</span><br><span class="line">                loader: <span class="string">'html-loader'</span>,</span><br><span class="line">            &#125;,</span><br><span class="line">            <span class="comment">// 处理其他文件</span></span><br><span class="line">            &#123;</span><br><span class="line">                exclude: <span class="regexp">/\.(js|css|less|html|jpg|png|gif)/</span>,</span><br><span class="line">                loader: <span class="string">'file-loader'</span>,</span><br><span class="line">                options: &#123;</span><br><span class="line">                    outputPath: <span class="string">'media'</span>,</span><br><span class="line">                &#125;,</span><br><span class="line">            &#125;,</span><br><span class="line">        ],</span><br><span class="line">    &#125;,</span><br><span class="line">    plugins: [</span><br><span class="line">        <span class="keyword">new</span> MiniCssExtractPlugin(&#123;</span><br><span class="line">            <span class="comment">// 对输出的css文件进行重命名</span></span><br><span class="line">            filename: <span class="string">'css/built.css'</span>,</span><br><span class="line">        &#125;),</span><br><span class="line">        <span class="comment">// 压缩css</span></span><br><span class="line">        <span class="keyword">new</span> OptimiziCssAssetsWebpackPlugin(),</span><br><span class="line">        <span class="comment">// HtmlWebpackPlugin：html文件的打包和压缩处理</span></span><br><span class="line">        <span class="comment">// 通过这个插件会自动将单独打包的样式文件通过link标签引入</span></span><br><span class="line">        <span class="keyword">new</span> HtmlWebpackPlugin(&#123;</span><br><span class="line">            template: <span class="string">'./src/index.html'</span>,</span><br><span class="line">            <span class="comment">// 压缩html代码</span></span><br><span class="line">            minify: &#123;</span><br><span class="line">                <span class="comment">// 移除空格</span></span><br><span class="line">                collapseWhitespace: <span class="literal">true</span>,</span><br><span class="line">                <span class="comment">// 移除注释</span></span><br><span class="line">                removeComments: <span class="literal">true</span>,</span><br><span class="line">            &#125;,</span><br><span class="line">        &#125;),</span><br><span class="line">    ],</span><br><span class="line">    <span class="comment">// 生产环境下会自动压缩js代码</span></span><br><span class="line">    mode: <span class="string">'production'</span>,</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>​     </p>
-
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>Thank you<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Webpack</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Nodejs,MongoDB</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/09/17/Webpack_Note-%E7%94%9F%E4%BA%A7%E7%8E%AF%E5%A2%83%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2020/09/20/Webpack_Note-%E4%BC%98%E5%8C%96%E9%85%8D%E7%BD%AE/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Webpack_Note-优化配置
-        
-      </div>
-    </a>
   
   
-    <a href="/2020/09/15/Webpack_Note-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Webpack_Note-开发环境基本配置</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-  
+    </div></section>
   
 
-  
-
-  
-
-  
+    
 
 
           </div>
@@ -353,9 +226,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,

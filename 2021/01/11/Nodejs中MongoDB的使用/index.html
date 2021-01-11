@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Webpack_Note-生产环境基本配置 | LSW_blog</title>
+  <title>Nodejs中MongoDB的使用 | LSW_blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Webpack 生产环境的基本配置而生产环境的配置需要考虑以下几个方面：•    提取 css 成单独文件•    css 兼容性处理•    压缩 css">
+  <meta name="description" content="MongoDB关系型和非关系型数据库关系型数据库（表就是关系，或者说表与表之间存在关系）。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Webpack_Note-生产环境基本配置">
-<meta property="og:url" content="http://yoursite.com/2020/09/17/Webpack_Note-%E7%94%9F%E4%BA%A7%E7%8E%AF%E5%A2%83%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE/index.html">
+<meta property="og:title" content="Nodejs中MongoDB的使用">
+<meta property="og:url" content="http://yoursite.com/2021/01/11/Nodejs%E4%B8%ADMongoDB%E7%9A%84%E4%BD%BF%E7%94%A8/index.html">
 <meta property="og:site_name" content="LSW_blog">
-<meta property="og:description" content="Webpack 生产环境的基本配置而生产环境的配置需要考虑以下几个方面：•    提取 css 成单独文件•    css 兼容性处理•    压缩 css">
+<meta property="og:description" content="MongoDB关系型和非关系型数据库关系型数据库（表就是关系，或者说表与表之间存在关系）。">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-09-16T16:00:00.000Z">
-<meta property="article:modified_time" content="2021-01-08T03:37:11.832Z">
+<meta property="article:published_time" content="2021-01-11T14:46:01.000Z">
+<meta property="article:modified_time" content="2021-01-11T15:00:54.536Z">
 <meta property="article:author" content="SW Lin">
-<meta property="article:tag" content="Webpack">
+<meta property="article:tag" content="Nodejs,MongoDB">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="LSW_blog" type="application/atom+xml">
@@ -155,33 +155,158 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Webpack_Note-生产环境基本配置" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Nodejs中MongoDB的使用" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Webpack_Note-生产环境基本配置
+      Nodejs中MongoDB的使用
     </h1>
   
 
         
-        <a href="/2020/09/17/Webpack_Note-%E7%94%9F%E4%BA%A7%E7%8E%AF%E5%A2%83%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE/" class="archive-article-date">
-  	<time datetime="2020-09-16T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-17</time>
+        <a href="/2021/01/11/Nodejs%E4%B8%ADMongoDB%E7%9A%84%E4%BD%BF%E7%94%A8/" class="archive-article-date">
+  	<time datetime="2021-01-11T14:46:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-11</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="Webpack-生产环境的基本配置"><a href="#Webpack-生产环境的基本配置" class="headerlink" title="Webpack 生产环境的基本配置"></a>Webpack 生产环境的基本配置</h3><p>而生产环境的配置需要考虑以下几个方面：<br>•    提取 css 成单独文件<br>•    css 兼容性处理<br>•    压缩 css</p>
-<a id="more"></a>
-<p>•    js 语法检查<br>•    js 兼容性处理<br>•    js 压缩<br>•    html 压缩</p>
-<p>下面是一个基本的生产环境下的webpack.config.js配置</p>
-  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> MiniCssExtractorPlugin = <span class="built_in">require</span>(<span class="string">'mini-css-extract-plugin'</span>)</span><br><span class="line"><span class="keyword">const</span> OptimiziCssAssetsWebpackPlugin = <span class="built_in">require</span>(<span class="string">'optimizi-css-assets-webpack-plugin'</span>)</span><br><span class="line"><span class="keyword">const</span> HtmlWebpackPlugin = <span class="built_in">require</span>(<span class="string">'html-webpack-plugin'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 定义node.js的环境变量，决定使用browserslist的哪个环境</span></span><br><span class="line">process.env.NODE_ENV = <span class="string">'production'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 复用loader的写法</span></span><br><span class="line"><span class="keyword">const</span> commonCssLoader = [</span><br><span class="line">    <span class="comment">// 这个loader取代style-loader。作用：提取js中的css成单独文件然后通过link加载</span></span><br><span class="line">    MiniCssExtractPlugin.loader,</span><br><span class="line">    <span class="comment">// css-loader：将css文件整合到js文件中</span></span><br><span class="line">    <span class="comment">// 经过css-loader处理后，样式文件是在js文件中的</span></span><br><span class="line">    <span class="comment">// 问题：1.js文件体积会很大2.需要先加载js再动态创建style标签，样式渲染速度就慢，会出现闪屏现象</span></span><br><span class="line">    <span class="comment">// 解决：用MiniCssExtractPlugin.loader替代style-loader</span></span><br><span class="line">    <span class="string">'css-loader'</span>,</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">      postcss-loader：css兼容性处理：postcss --&gt; 需要安装：postcss-loader postcss-preset-env</span></span><br><span class="line"><span class="comment">      postcss需要通过package.json中browserslist里面的配置加载指定的css兼容性样式</span></span><br><span class="line"><span class="comment">      在package.json中定义browserslist：</span></span><br><span class="line"><span class="comment">      "browserslist": &#123;</span></span><br><span class="line"><span class="comment">        // 开发环境 --&gt; 设置node环境变量：process.env.NODE_ENV = development</span></span><br><span class="line"><span class="comment">        "development": [ // 只需要可以运行即可</span></span><br><span class="line"><span class="comment">          "last 1 chrome version",</span></span><br><span class="line"><span class="comment">          "last 1 firefox version",</span></span><br><span class="line"><span class="comment">          "last 1 safari version"</span></span><br><span class="line"><span class="comment">        ],</span></span><br><span class="line"><span class="comment">        // 生产环境。默认是生产环境</span></span><br><span class="line"><span class="comment">        "production": [ // 需要满足绝大多数浏览器的兼容</span></span><br><span class="line"><span class="comment">          "&gt;0.2%",</span></span><br><span class="line"><span class="comment">          "not dead",</span></span><br><span class="line"><span class="comment">          "not op_mini all"</span></span><br><span class="line"><span class="comment">        ]</span></span><br><span class="line"><span class="comment">      &#125;,</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    &#123;</span><br><span class="line">        loader: <span class="string">'postcss-loader'</span>,</span><br><span class="line">        options: &#123;</span><br><span class="line">            ident: <span class="string">'postcss'</span>, <span class="comment">// 基本写法</span></span><br><span class="line">            plugins: <span class="function"><span class="params">()</span> =&gt;</span> [</span><br><span class="line">                <span class="comment">// postcss的插件</span></span><br><span class="line">                <span class="built_in">require</span>(<span class="string">'postcss-preset-env'</span>)(),</span><br><span class="line">            ],</span><br><span class="line">        &#125;,</span><br><span class="line">    &#125;,</span><br><span class="line">]</span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    entry: <span class="string">'./src/js/index.js'</span>,</span><br><span class="line">    output: &#123;</span><br><span class="line">        filename: <span class="string">'js/built.js'</span>,</span><br><span class="line">        path: resolve(__dirname, <span class="string">'build'</span>),</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="built_in">module</span>: &#123;</span><br><span class="line">        rules: [</span><br><span class="line">            &#123;</span><br><span class="line">                test: <span class="regexp">/\.css$/</span>,</span><br><span class="line">                use: [...commonCssLoader],</span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                test: <span class="regexp">/\.less$/</span>,</span><br><span class="line">                use: [...commonCssLoader, <span class="string">'less-loader'</span>],</span><br><span class="line">            &#125;,</span><br><span class="line">            <span class="comment">/*</span></span><br><span class="line"><span class="comment">              正常来讲，一个文件只能被一个loader处理</span></span><br><span class="line"><span class="comment">              当一个文件要被多个loader处理，那么一定要指定loader执行的先后顺序</span></span><br><span class="line"><span class="comment">              先执行eslint再执行babel（用enforce）</span></span><br><span class="line"><span class="comment">            */</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="comment">/*</span></span><br><span class="line"><span class="comment">                  js的语法检查： 需要下载 eslint-loader eslint</span></span><br><span class="line"><span class="comment">                  注意：只检查自己写的源代码，第三方的库是不用检查的</span></span><br><span class="line"><span class="comment">                  airbnb(一个流行的js风格) --&gt; 需要下载 eslint-config-airbnb-base eslint-plugin-import</span></span><br><span class="line"><span class="comment">                  设置检查规则：</span></span><br><span class="line"><span class="comment">                    package.json中eslintConfig中设置</span></span><br><span class="line"><span class="comment">                      "eslintConfig": &#123;</span></span><br><span class="line"><span class="comment">                        "extends": "airbnb-base"， // 继承airbnb的风格规范</span></span><br><span class="line"><span class="comment">                        "env": &#123;</span></span><br><span class="line"><span class="comment">                          "browser": true // 可以使用浏览器中的全局变量(使用window不会报错)</span></span><br><span class="line"><span class="comment">                        &#125;</span></span><br><span class="line"><span class="comment">                      &#125;</span></span><br><span class="line"><span class="comment">                */</span></span><br><span class="line">                test: <span class="regexp">/\.js$/</span>,</span><br><span class="line">                exclude: <span class="regexp">/node_modules/</span>, <span class="comment">// 忽略node_modules</span></span><br><span class="line">                enforce: <span class="string">'pre'</span>, <span class="comment">// 优先执行</span></span><br><span class="line">                loader: <span class="string">'eslint-loader'</span>,</span><br><span class="line">                options: &#123;</span><br><span class="line">                    <span class="comment">// 自动修复</span></span><br><span class="line">                    fix: <span class="literal">true</span>,</span><br><span class="line">                &#125;,</span><br><span class="line">            &#125;,</span><br><span class="line">            <span class="comment">/*</span></span><br><span class="line"><span class="comment">              js兼容性处理：需要下载 babel-loader @babel/core</span></span><br><span class="line"><span class="comment">  </span></span><br><span class="line"><span class="comment">                   1. 基本js兼容性处理 --&gt; @babel/preset-env</span></span><br><span class="line"><span class="comment">                           问题：只能转换基本语法，如promise高级语法不能转换</span></span><br><span class="line"><span class="comment">                            2. 全部js兼容性处理 --&gt; @babel/polyfill</span></span><br><span class="line"><span class="comment">                                   问题：只要解决部分兼容性问题，但是将所有兼容性代码全部引入，体积太大了</span></span><br><span class="line"><span class="comment">                                    3. 需要做兼容性处理的就做：按需加载  --&gt; core-js</span></span><br><span class="line"><span class="comment">                                    */</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="comment">// 第三种方式：按需加载</span></span><br><span class="line">                test: <span class="regexp">/\.js$/</span>,</span><br><span class="line">                exclude: <span class="regexp">/node_modules/</span>,</span><br><span class="line">                loader: <span class="string">'babel-loader'</span>,</span><br><span class="line">                options: &#123;</span><br><span class="line">                    <span class="comment">// 预设：指示babel做怎样的兼容性处理</span></span><br><span class="line">                    presets: [</span><br><span class="line">                        <span class="string">'@babel/preset-env'</span>, <span class="comment">// 基本预设</span></span><br><span class="line">                        &#123;</span><br><span class="line">                            useBuiltIns: <span class="string">'usage'</span>, <span class="comment">//按需加载</span></span><br><span class="line">                            corejs: &#123; <span class="attr">version</span>: <span class="number">3</span> &#125;, <span class="comment">// 指定core-js版本</span></span><br><span class="line">                            targets: &#123; <span class="comment">// 指定兼容到什么版本的浏览器</span></span><br><span class="line">                                chrome: <span class="string">'60'</span>,</span><br><span class="line">                                firefox: <span class="string">'50'</span>,</span><br><span class="line">                                ie: <span class="string">'9'</span>,</span><br><span class="line">                                safari: <span class="string">'10'</span>,</span><br><span class="line">                                edge: <span class="string">'17'</span></span><br><span class="line">                            &#125;,</span><br><span class="line">                        &#125;,</span><br><span class="line">                    ],</span><br><span class="line">                &#125;,</span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="comment">// 图片处理</span></span><br><span class="line">                test: <span class="regexp">/\.(jpg|png|gif)/</span>,</span><br><span class="line">                loader: <span class="string">'url-loader'</span>,</span><br><span class="line">                options: &#123;</span><br><span class="line">                    limit: <span class="number">8</span> * <span class="number">1024</span>,</span><br><span class="line">                    name: <span class="string">'[hash:10].[ext]'</span>,</span><br><span class="line">                    outputPath: <span class="string">'imgs'</span>,</span><br><span class="line">                    esModule: <span class="literal">false</span>, <span class="comment">// 关闭url-loader默认使用的es6模块化解析</span></span><br><span class="line">                &#125;,</span><br><span class="line">            &#125;,</span><br><span class="line">            <span class="comment">// html中的图片处理</span></span><br><span class="line">            &#123;</span><br><span class="line">                test: <span class="regexp">/\.html$/</span>,</span><br><span class="line">                loader: <span class="string">'html-loader'</span>,</span><br><span class="line">            &#125;,</span><br><span class="line">            <span class="comment">// 处理其他文件</span></span><br><span class="line">            &#123;</span><br><span class="line">                exclude: <span class="regexp">/\.(js|css|less|html|jpg|png|gif)/</span>,</span><br><span class="line">                loader: <span class="string">'file-loader'</span>,</span><br><span class="line">                options: &#123;</span><br><span class="line">                    outputPath: <span class="string">'media'</span>,</span><br><span class="line">                &#125;,</span><br><span class="line">            &#125;,</span><br><span class="line">        ],</span><br><span class="line">    &#125;,</span><br><span class="line">    plugins: [</span><br><span class="line">        <span class="keyword">new</span> MiniCssExtractPlugin(&#123;</span><br><span class="line">            <span class="comment">// 对输出的css文件进行重命名</span></span><br><span class="line">            filename: <span class="string">'css/built.css'</span>,</span><br><span class="line">        &#125;),</span><br><span class="line">        <span class="comment">// 压缩css</span></span><br><span class="line">        <span class="keyword">new</span> OptimiziCssAssetsWebpackPlugin(),</span><br><span class="line">        <span class="comment">// HtmlWebpackPlugin：html文件的打包和压缩处理</span></span><br><span class="line">        <span class="comment">// 通过这个插件会自动将单独打包的样式文件通过link标签引入</span></span><br><span class="line">        <span class="keyword">new</span> HtmlWebpackPlugin(&#123;</span><br><span class="line">            template: <span class="string">'./src/index.html'</span>,</span><br><span class="line">            <span class="comment">// 压缩html代码</span></span><br><span class="line">            minify: &#123;</span><br><span class="line">                <span class="comment">// 移除空格</span></span><br><span class="line">                collapseWhitespace: <span class="literal">true</span>,</span><br><span class="line">                <span class="comment">// 移除注释</span></span><br><span class="line">                removeComments: <span class="literal">true</span>,</span><br><span class="line">            &#125;,</span><br><span class="line">        &#125;),</span><br><span class="line">    ],</span><br><span class="line">    <span class="comment">// 生产环境下会自动压缩js代码</span></span><br><span class="line">    mode: <span class="string">'production'</span>,</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h1 id="MongoDB"><a href="#MongoDB" class="headerlink" title="MongoDB"></a>MongoDB</h1><h3 id="关系型和非关系型数据库"><a href="#关系型和非关系型数据库" class="headerlink" title="关系型和非关系型数据库"></a>关系型和非关系型数据库</h3><h4 id="关系型数据库（表就是关系，或者说表与表之间存在关系）。"><a href="#关系型数据库（表就是关系，或者说表与表之间存在关系）。" class="headerlink" title="关系型数据库（表就是关系，或者说表与表之间存在关系）。"></a>关系型数据库（表就是关系，或者说表与表之间存在关系）。</h4><a id="more"></a>
 
-<p>​     </p>
+<ul>
+<li>所有的关系型数据库都需要通过<code>sql</code>语言来操作</li>
+<li>所有的关系型数据库在操作之前都需要设计表结构</li>
+<li>而且数据表还支持约束<ul>
+<li>唯一的</li>
+<li>主键</li>
+<li>默认值</li>
+<li>非空</li>
+</ul>
+</li>
+</ul>
+<h4 id="非关系型数据库"><a href="#非关系型数据库" class="headerlink" title="非关系型数据库"></a>非关系型数据库</h4><ul>
+<li>非关系型数据库非常的灵活</li>
+<li>有的非关系型数据库就是key-value对儿</li>
+<li>但MongDB是长得最像关系型数据库的非关系型数据库<ul>
+<li>数据库 -》 数据库</li>
+<li>数据表 -》 集合（数组）</li>
+<li>表记录 -》文档对象</li>
+</ul>
+</li>
+</ul>
+<p>一个数据库中可以有多个数据库，一个数据库中可以有多个集合（数组），一个集合中可以有多个文档（表记录）</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    qq:&#123;</span><br><span class="line">       user:[</span><br><span class="line">           &#123;&#125;,&#123;&#125;,&#123;&#125;...</span><br><span class="line">       ]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li>也就是说你可以任意的往里面存数据，没有结构性这么一说</li>
+</ul>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><ul>
+<li><p>下载</p>
+<ul>
+<li>下载地址：<a href="https://www.mongodb.com/download-center/community" target="_blank" rel="noopener">https://www.mongodb.com/download-center/community</a></li>
+</ul>
+</li>
+<li><p>安装</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i mongoose</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>配置环境变量</p>
+</li>
+<li><p>最后输入<code>mongod --version</code>测试是否安装成功</p>
+</li>
+</ul>
+<h2 id="启动和关闭数据库"><a href="#启动和关闭数据库" class="headerlink" title="启动和关闭数据库"></a>启动和关闭数据库</h2><p>启动：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> mongodb 默认使用执行mongod 命令所处盼复根目录下的/data/db作为自己的数据存储目录</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 所以在第一次执行该命令之前先自己手动新建一个 /data/db</span></span><br><span class="line">mongod</span><br></pre></td></tr></table></figure>
+
+<p>如果想要修改默认的数据存储目录，可以：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mongod --dbpath = 数据存储目录路径</span><br></pre></td></tr></table></figure>
+
+<p>停止：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">在开启服务的控制台，直接Ctrl+C;</span><br><span class="line">或者直接关闭开启服务的控制台。</span><br></pre></td></tr></table></figure>
+
+<h2 id="连接数据库"><a href="#连接数据库" class="headerlink" title="连接数据库"></a>连接数据库</h2><p>连接：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 该命令默认连接本机的 MongoDB 服务</span><br><span class="line">mongo</span><br></pre></td></tr></table></figure>
+
+<p>退出：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 在连接状态输入 exit 退出连接</span><br><span class="line">exit</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h2><ul>
+<li><code>show dbs</code><ul>
+<li>查看数据库列表(数据库中的所有数据库)</li>
+</ul>
+</li>
+<li><code>db</code><ul>
+<li>查看当前连接的数据库</li>
+</ul>
+</li>
+<li><code>use 数据库名称</code><ul>
+<li>切换到指定的数据库，（如果没有会新建）</li>
+</ul>
+</li>
+<li><code>show collections</code><ul>
+<li>查看当前目录下的所有数据表</li>
+</ul>
+</li>
+<li><code>db.表名.find()</code><ul>
+<li>查看表中的详细信息</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="在Node中如何操作MongoDB数据库"><a href="#在Node中如何操作MongoDB数据库" class="headerlink" title="在Node中如何操作MongoDB数据库"></a>在Node中如何操作MongoDB数据库</h2><h3 id="使用官方的MongoDB包来操作"><a href="#使用官方的MongoDB包来操作" class="headerlink" title="使用官方的MongoDB包来操作"></a>使用官方的<code>MongoDB</code>包来操作</h3><blockquote>
+<p>​    <a href="http://mongodb.github.io/node-mongodb-native/" target="_blank" rel="noopener">http://mongodb.github.io/node-mongodb-native/</a></p>
+</blockquote>
+<h3 id="使用第三方包mongoose来操作MongoDB数据库"><a href="#使用第三方包mongoose来操作MongoDB数据库" class="headerlink" title="使用第三方包mongoose来操作MongoDB数据库"></a>使用第三方包<code>mongoose</code>来操作MongoDB数据库</h3><p>​    第三方包：<code>mongoose</code>基于MongoDB官方的<code>mongodb</code>包再一次做了封装，名字叫<code>mongoose</code>，是WordPress项目团队开发的。</p>
+<blockquote>
+<p>​    <a href="https://mongoosejs.com/" target="_blank" rel="noopener">https://mongoosejs.com/</a></p>
+</blockquote>
+<h2 id="学习指南（步骤）"><a href="#学习指南（步骤）" class="headerlink" title="学习指南（步骤）"></a>学习指南（步骤）</h2><blockquote>
+<p>官方学习文档：<a href="https://mongoosejs.com/docs/index.html" target="_blank" rel="noopener">https://mongoosejs.com/docs/index.html</a></p>
+</blockquote>
+<h3 id="设计Scheme-发布Model-创建表"><a href="#设计Scheme-发布Model-创建表" class="headerlink" title="设计Scheme 发布Model (创建表)"></a>设计Scheme 发布Model (创建表)</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1.引包</span></span><br><span class="line"><span class="comment">// 注意：按照后才能require使用</span></span><br><span class="line"><span class="keyword">var</span> mongoose = <span class="built_in">require</span>(<span class="string">'mongoose'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 拿到schema图表</span></span><br><span class="line"><span class="keyword">var</span> Schema = mongoose.Schema;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2.连接数据库</span></span><br><span class="line"><span class="comment">// 指定连接数据库后不需要存在，当你插入第一条数据库后会自动创建数据库</span></span><br><span class="line">mongoose.connect(<span class="string">'mongodb://localhost/test'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 3.设计集合结构（表结构）</span></span><br><span class="line"><span class="comment">// 用户表</span></span><br><span class="line"><span class="keyword">var</span> userSchema = <span class="keyword">new</span> Schema(&#123;</span><br><span class="line">	username: &#123; <span class="comment">//姓名</span></span><br><span class="line">		type: <span class="built_in">String</span>,</span><br><span class="line">		<span class="built_in">require</span>: <span class="literal">true</span> <span class="comment">//添加约束，保证数据的完整性，让数据按规矩统一</span></span><br><span class="line">	&#125;,</span><br><span class="line">	password: &#123;</span><br><span class="line">		type: <span class="built_in">String</span>,</span><br><span class="line">		<span class="built_in">require</span>: <span class="literal">true</span></span><br><span class="line">	&#125;,</span><br><span class="line">	email: &#123;</span><br><span class="line">		type: <span class="built_in">String</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 4.将文档结构发布为模型</span></span><br><span class="line"><span class="comment">// mongoose.model方法就是用来将一个架构发布为 model</span></span><br><span class="line"><span class="comment">// 		第一个参数：传入一个大写名词单数字符串用来表示你的数据库的名称</span></span><br><span class="line"><span class="comment">// 					mongoose 会自动将大写名词的字符串生成 小写复数 的集合名称</span></span><br><span class="line"><span class="comment">// 					例如 这里会变成users集合名称</span></span><br><span class="line"><span class="comment">// 		第二个参数：架构</span></span><br><span class="line"><span class="comment">// 	返回值：模型构造函数</span></span><br><span class="line"><span class="keyword">var</span> User = mongoose.model(<span class="string">'User'</span>, userSchema);</span><br></pre></td></tr></table></figure>
+
+<h3 id="添加数据（增）"><a href="#添加数据（增）" class="headerlink" title="添加数据（增）"></a>添加数据（增）</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 5.通过模型构造函数对User中的数据进行操作</span></span><br><span class="line"><span class="keyword">var</span> user = <span class="keyword">new</span> User(&#123;</span><br><span class="line">	username: <span class="string">'admin'</span>,</span><br><span class="line">	password: <span class="string">'123456'</span>,</span><br><span class="line">	email: <span class="string">'xiaochen@qq.com'</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">user.save(<span class="function"><span class="keyword">function</span>(<span class="params">err, ret</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (err) &#123;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="string">'保存失败'</span>);</span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="string">'保存成功'</span>);</span><br><span class="line">		<span class="built_in">console</span>.log(ret);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="删除（删）"><a href="#删除（删）" class="headerlink" title="删除（删）"></a>删除（删）</h3><p>根据条件删除所有：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">User.remove(&#123;</span><br><span class="line">	username: <span class="string">'xiaoxiao'</span></span><br><span class="line">&#125;, <span class="function"><span class="keyword">function</span>(<span class="params">err, ret</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (err) &#123;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="string">'删除失败'</span>);</span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="string">'删除成功'</span>);</span><br><span class="line">		<span class="built_in">console</span>.log(ret);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>根据条件删除一个：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Model.findOneAndRemove(conditions,[options],[callback]);</span><br></pre></td></tr></table></figure>
+
+<p>根据id删除一个：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">User.findByIdAndRemove(id,[options],[callback]);</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="更新（改）"><a href="#更新（改）" class="headerlink" title="更新（改）"></a>更新（改）</h3><p>更新所有：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">User.remove(conditions,doc,[options],[callback]);</span><br></pre></td></tr></table></figure>
+
+<p>根据指定条件更新一个：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">User.FindOneAndUpdate([conditions],[update],[options],[callback]);</span><br></pre></td></tr></table></figure>
+
+<p>根据id更新一个：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 更新	根据id来修改表数据</span></span><br><span class="line">User.findByIdAndUpdate(<span class="string">'5e6c5264fada77438c45dfcd'</span>, &#123;</span><br><span class="line">	username: <span class="string">'junjun'</span></span><br><span class="line">&#125;, <span class="function"><span class="keyword">function</span>(<span class="params">err, ret</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (err) &#123;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="string">'更新失败'</span>);</span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="string">'更新成功'</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="查询（查）"><a href="#查询（查）" class="headerlink" title="查询（查）"></a>查询（查）</h3><p>查询所有：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 查询所有</span></span><br><span class="line">User.find(<span class="function"><span class="keyword">function</span>(<span class="params">err,ret</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(err)&#123;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="string">'查询失败'</span>);</span><br><span class="line">	&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">		<span class="built_in">console</span>.log(ret);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>条件查询所有：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 根据条件查询</span></span><br><span class="line">User.find(&#123; <span class="attr">username</span>:<span class="string">'xiaoxiao'</span> &#125;,<span class="function"><span class="keyword">function</span>(<span class="params">err,ret</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(err)&#123;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="string">'查询失败'</span>);</span><br><span class="line">	&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">		<span class="built_in">console</span>.log(ret);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>条件查询单个：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 按照条件查询单个，查询出来的数据是一个对象（&#123;&#125;）</span></span><br><span class="line"><span class="comment">// 没有条件查询使用findOne方法，查询的是表中的第一条数据</span></span><br><span class="line">User.findOne(&#123;</span><br><span class="line">	username: <span class="string">'xiaoxiao'</span></span><br><span class="line">&#125;, <span class="function"><span class="keyword">function</span>(<span class="params">err, ret</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (err) &#123;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="string">'查询失败'</span>);</span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">		<span class="built_in">console</span>.log(ret);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+
+
+<hr>
 
       
 
@@ -216,7 +341,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Webpack</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Nodejs,MongoDB</a>
         		</li>
       		
 		</ul>
@@ -272,7 +397,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/09/17/Webpack_Note-%E7%94%9F%E4%BA%A7%E7%8E%AF%E5%A2%83%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2021/01/11/Nodejs%E4%B8%ADMongoDB%E7%9A%84%E4%BD%BF%E7%94%A8/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -286,18 +411,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/09/20/Webpack_Note-%E4%BC%98%E5%8C%96%E9%85%8D%E7%BD%AE/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2021/01/11/Nodejs%E4%B8%ADMySQL%E7%9A%84%E4%BD%BF%E7%94%A8/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Webpack_Note-优化配置
+          Nodejs中MySQL的使用
         
       </div>
     </a>
   
   
-    <a href="/2020/09/15/Webpack_Note-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Webpack_Note-开发环境基本配置</div>
+    <a href="/2021/01/11/Express/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Nodejs中Express框架的使用</div>
       <i class="icon-circle-right"></i>
     </a>
   
