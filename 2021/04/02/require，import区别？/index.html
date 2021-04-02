@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2021 | LSW_blog</title>
+  <title>require，import区别？ | LSW_blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="LSW_blog">
-<meta property="og:url" content="http://yoursite.com/archives/2021/index.html">
+  <meta name="description" content="require，import区别？遵循的模块化规范不一样 模块化规范：即为 JavaScript 提供一种模块编写、模块依赖和模块运行的方案。谁让最初的 JavaScript 是那么的裸奔呢——全局变量就是它的模块化规范。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="require，import区别？">
+<meta property="og:url" content="http://yoursite.com/2021/04/02/require%EF%BC%8Cimport%E5%8C%BA%E5%88%AB%EF%BC%9F/index.html">
 <meta property="og:site_name" content="LSW_blog">
+<meta property="og:description" content="require，import区别？遵循的模块化规范不一样 模块化规范：即为 JavaScript 提供一种模块编写、模块依赖和模块运行的方案。谁让最初的 JavaScript 是那么的裸奔呢——全局变量就是它的模块化规范。">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-04-02T14:31:47.873Z">
+<meta property="article:modified_time" content="2021-04-02T14:32:12.480Z">
 <meta property="article:author" content="SW Lin">
 <meta name="twitter:card" content="summary">
   
@@ -150,339 +154,255 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-require，import区别？" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      require，import区别？
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2021" class="archive-year">2021</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/04/02/require%EF%BC%8Cimport%E5%8C%BA%E5%88%AB%EF%BC%9F/" class="archive-article-date">
+
+        
+        <a href="/2021/04/02/require%EF%BC%8Cimport%E5%8C%BA%E5%88%AB%EF%BC%9F/" class="archive-article-date">
   	<time datetime="2021-04-02T14:31:47.873Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-02</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/04/02/require%EF%BC%8Cimport%E5%8C%BA%E5%88%AB%EF%BC%9F/">require，import区别？</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="require，import区别？"><a href="#require，import区别？" class="headerlink" title="require，import区别？"></a>require，import区别？</h1><h2 id="遵循的模块化规范不一样"><a href="#遵循的模块化规范不一样" class="headerlink" title="遵循的模块化规范不一样"></a>遵循的模块化规范不一样</h2><blockquote>
+<p><strong>模块化规范：</strong>即为 JavaScript 提供一种模块编写、模块依赖和模块运行的方案。谁让最初的 JavaScript 是那么的裸奔呢——全局变量就是它的模块化规范。</p>
+</blockquote>
+<a id="more"></a>
 
-        <div class="article-info info-on-right">
-          
-          
+<p>require/exports 出生在野生规范当中，什么叫做野生规范？即这些规范是 JavaScript 社区中的开发者自己草拟的规则，得到了大家的承认或者广泛的应用。比如 CommonJS、AMD、CMD 等等。import/export 则是名门正派。TC39 制定的新的 ECMAScript 版本，即 ES6（ES2015）中包含进来。</p>
+<h2 id="出现的时间不同"><a href="#出现的时间不同" class="headerlink" title="出现的时间不同"></a>出现的时间不同</h2><p>require/exports 相关的规范由于野生性质，在 2010 年前后出生。AMD、CMD 相对命比较短，到 2014 年基本上就摇摇欲坠了。一开始大家还比较喜欢在浏览器上采用这种异步小模块的加载方式，但并不是银弹。随着 Node.js 流行和 Browsersify 的兴起，运行时异步加载逐渐被构建时模块合并分块所替代。Wrapper 函数再也不需要了。 2014 年 Webpack 还是新玩意，现在已经是前端必备神器了。</p>
+<blockquote>
+<p>Browsersify、Webpack 一开始的目的就是打包 CommonJS 模块。 </p>
+</blockquote>
+<p>CommonJS 作为 Node.js 的规范，一直沿用至今。由于 npm 上 CommonJS 的类库众多，以及 CommonJS 和 ES6 之间的差异，Node.js 无法直接兼容 ES6。所以现阶段 require/exports 任然是必要且实必须的。出自 ES6 的  import/export 相对就晚了许多。被大家所熟知和使用也是 2015 年之后的事了。 这其实要感谢 babel（原来项目名叫做 6to5，后更名为 babel） 这个神一般的项目。由于有了 babel 将还未被宿主环境（各浏览器、Node.js）直接支持的 ES6 Module 编译为 ES5 的 CommonJS —— 也就是 require/exports 这种写法 —— Webpack 插上 babel-loader 这个翅膀才开始高飞，大家也才可以称 “ 我在使用 ES6！ “</p>
+<blockquote>
+<p>这也就是为什么前面说 require/exports 是必要且必须的。因为事实是，目前你编写的 import/export 最终都是编译为 require/exports 来执行的。</p>
+</blockquote>
+<h2 id="require-exports-和-import-export-形式不一样"><a href="#require-exports-和-import-export-形式不一样" class="headerlink" title="require/exports 和 import/export 形式不一样"></a>require/exports 和 import/export 形式不一样</h2><p>require/exports 的用法只有以下三种简单的写法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">const fs &#x3D; require(&#39;fs&#39;)</span><br><span class="line">exports.fs &#x3D; fs</span><br><span class="line">module.exports &#x3D; fs</span><br></pre></td></tr></table></figure>
 
+<p>而 import/export 的写法就多种多样：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">import fs from &#39;fs&#39;</span><br><span class="line">import &#123;default as fs&#125; from &#39;fs&#39;</span><br><span class="line">import * as fs from &#39;fs&#39;</span><br><span class="line">import &#123;readFile&#125; from &#39;fs&#39;</span><br><span class="line">import &#123;readFile as read&#125; from &#39;fs&#39;</span><br><span class="line">import fs, &#123;readFile&#125; from &#39;fs&#39;</span><br><span class="line"></span><br><span class="line">export default fs</span><br><span class="line">export const fs</span><br><span class="line">export function readFile</span><br><span class="line">export &#123;readFile, read&#125;</span><br><span class="line">export * from &#39;fs&#39;</span><br></pre></td></tr></table></figure>
+
+<h2 id="require-exports-和-import-export-本质上的差别"><a href="#require-exports-和-import-export-本质上的差别" class="headerlink" title="require/exports 和 import/export 本质上的差别"></a>require/exports 和 import/export 本质上的差别</h2><p>形式上看起来五花八门，但本质上：</p>
+<ol>
+<li>CommonJS 还是 ES6 Module 输出都可以看成是一个具备多个属性或者方法的对象；</li>
+<li>default 是 ES6 Module 所独有的关键字，export default fs 输出默认的接口对象，import fs from ‘fs’ 可直接导入这个对象；</li>
+<li>ES6 Module 中导入模块的属性或者方法是强绑定的，包括基础类型；而 CommonJS 则是普通的值传递或者引用传递。</li>
+</ol>
+<p>1、2 相对比较好理解，3 需要看个例子：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// counter.js</span></span><br><span class="line">exports.count = <span class="number">0</span></span><br><span class="line">setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'increase count to'</span>, ++exports.count, <span class="string">'in counter.js after 500ms'</span>)</span><br><span class="line">&#125;, <span class="number">500</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// commonjs.js</span></span><br><span class="line"><span class="keyword">const</span> &#123;count&#125; = <span class="built_in">require</span>(<span class="string">'./counter'</span>)</span><br><span class="line">setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'read count after 1000ms in commonjs is'</span>, count)</span><br><span class="line">&#125;, <span class="number">1000</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">//es6.js</span></span><br><span class="line"><span class="keyword">import</span> &#123;count&#125; <span class="keyword">from</span> <span class="string">'./counter'</span></span><br><span class="line">setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'read count after 1000ms in es6 is'</span>, count)</span><br><span class="line">&#125;, <span class="number">1000</span>)</span><br></pre></td></tr></table></figure>
+
+<p>分别运行 commonjs.js 和 es6.js：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">➜  <span class="built_in">test</span> node commonjs.js</span><br><span class="line">increase count to 1 <span class="keyword">in</span> counter.js after 500ms</span><br><span class="line"><span class="built_in">read</span> count after 1000ms <span class="keyword">in</span> commonjs is 0</span><br><span class="line">➜  <span class="built_in">test</span> babel-node es6.js</span><br><span class="line">increase count to 1 <span class="keyword">in</span> counter.js after 500ms</span><br><span class="line"><span class="built_in">read</span> count after 1000ms <span class="keyword">in</span> es6 is 1</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h2 id="CommonJS模块与ES6模块的区别"><a href="#CommonJS模块与ES6模块的区别" class="headerlink" title="CommonJS模块与ES6模块的区别"></a>CommonJS模块与ES6模块的区别</h2><p>转载请注明出处：<a href="http://www.cnblogs.com/unclekeith/p/7679503.html" target="_blank" rel="noopener">CommonJS模块与es6模块的区别</a></p>
+<h3 id="CommonJS"><a href="#CommonJS" class="headerlink" title="CommonJS"></a>CommonJS</h3><ol>
+<li>对于基本数据类型，属于复制。即会被模块缓存。同时，在另一个模块可以对该模块输出的变量重新赋值。</li>
+<li>对于复杂数据类型，属于浅拷贝。由于两个模块引用的对象指向同一个内存空间，因此对该模块的值做修改时会影响另一个模块。</li>
+<li>当使用require命令加载某个模块时，就会运行整个模块的代码。</li>
+<li>当使用require命令加载同一个模块时，不会再执行该模块，而是取到缓存之中的值。也就是说，CommonJS模块无论加载多少次，都只会在第一次加载时运行一次，以后再加载，就返回第一次运行的结果，除非手动清除系统缓存。</li>
+<li>循环加载时，属于加载时执行。即脚本代码在require的时候，就会全部执行。一旦出现某个模块被”循环加载”，就只输出已经执行的部分，还未执行的部分不会输出。</li>
+</ol>
+<h3 id="ES6模块"><a href="#ES6模块" class="headerlink" title="ES6模块"></a>ES6模块</h3><ol>
+<li>ES6模块中的值属于【动态只读引用】。</li>
+<li>对于只读来说，即不允许修改引入变量的值，import的变量是只读的，不论是基本数据类型还是复杂数据类型。当模块遇到import命令时，就会生成一个只读引用。等到脚本真正执行时，再根据这个只读引用，到被加载的那个模块里面去取值。</li>
+<li>对于动态来说，原始值发生变化，import加载的值也会发生变化。不论是基本数据类型还是复杂数据类型。</li>
+<li>循环加载时，ES6模块是动态引用。只要两个模块之间存在某个引用，代码就能够执行。</li>
+</ol>
+<p>上面说了一些重要区别。现在举一些例子来说明每一点吧</p>
+<h3 id="CommonJS-1"><a href="#CommonJS-1" class="headerlink" title="CommonJS"></a>CommonJS</h3><ol>
+<li>对于基本数据类型，属于复制。即会被模块缓存。同时，在另一个模块可以对该模块输出的变量重新赋值。</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; b.js</span><br><span class="line">let count &#x3D; 1</span><br><span class="line">let plusCount &#x3D; () &#x3D;&gt; &#123;</span><br><span class="line">  count++</span><br><span class="line">&#125;</span><br><span class="line">setTimeout(() &#x3D;&gt; &#123;</span><br><span class="line">  console.log(&#39;b.js-1&#39;, count)</span><br><span class="line">&#125;, 1000)</span><br><span class="line">module.exports &#x3D; &#123;</span><br><span class="line">  count,</span><br><span class="line">  plusCount</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; a.js</span><br><span class="line">let mod &#x3D; require(&#39;.&#x2F;b.js&#39;)</span><br><span class="line">console.log(&#39;a.js-1&#39;, mod.count)</span><br><span class="line">mod.plusCount()</span><br><span class="line">console.log(&#39;a.js-2&#39;, mod.count)</span><br><span class="line">setTimeout(() &#x3D;&gt; &#123;</span><br><span class="line">    mod.count &#x3D; 3</span><br><span class="line">    console.log(&#39;a.js-3&#39;, mod.count)</span><br><span class="line">&#125;, 2000)</span><br><span class="line"></span><br><span class="line">node a.js</span><br><span class="line">a.js-1 1</span><br><span class="line">a.js-2 1</span><br><span class="line">b.js-1 2  &#x2F;&#x2F; 1秒后</span><br><span class="line">a.js-3 3  &#x2F;&#x2F; 2秒后</span><br></pre></td></tr></table></figure>
+
+<p>以上代码可以看出，b模块export的count变量，是一个复制行为。在plusCount方法调用之后，a模块中的count不受影响。同时，可以在b模块中更改a模块中的值。如果希望能够同步代码，可以export出去一个getter。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 其他代码相同</span><br><span class="line">module.exports &#x3D; &#123;</span><br><span class="line">  get count () &#123;</span><br><span class="line">    return count</span><br><span class="line">  &#125;,</span><br><span class="line">  plusCount</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">node a.js</span><br><span class="line">a.js-1 1</span><br><span class="line">a.js-2 1</span><br><span class="line">b.js-1 2  &#x2F;&#x2F; 1秒后</span><br><span class="line">a.js-3 2  &#x2F;&#x2F; 2秒后， 由于没有定义setter，因此无法对值进行设置。所以还是返回2</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>对于复杂数据类型，属于浅拷贝。由于两个模块引用的对象指向同一个内存空间，因此对该模块的值做修改时会影响另一个模块。</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; b.js</span><br><span class="line">let obj &#x3D; &#123;</span><br><span class="line">  count: 1</span><br><span class="line">&#125;</span><br><span class="line">let plusCount &#x3D; () &#x3D;&gt; &#123;</span><br><span class="line">  obj.count++</span><br><span class="line">&#125;</span><br><span class="line">setTimeout(() &#x3D;&gt; &#123;</span><br><span class="line">  console.log(&#39;b.js-1&#39;, obj.count)</span><br><span class="line">&#125;, 1000)</span><br><span class="line">setTimeout(() &#x3D;&gt; &#123;</span><br><span class="line">  console.log(&#39;b.js-2&#39;, obj.count)</span><br><span class="line">&#125;, 3000)</span><br><span class="line">module.exports &#x3D; &#123;</span><br><span class="line">  obj,</span><br><span class="line">  plusCount</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; a.js</span><br><span class="line">var mod &#x3D; require(&#39;.&#x2F;b.js&#39;)</span><br><span class="line">console.log(&#39;a.js-1&#39;, mod.obj.count)</span><br><span class="line">mod.plusCount()</span><br><span class="line">console.log(&#39;a.js-2&#39;, mod.obj.count)</span><br><span class="line">setTimeout(() &#x3D;&gt; &#123;</span><br><span class="line">  mod.obj.count &#x3D; 3</span><br><span class="line">  console.log(&#39;a.js-3&#39;, mod.obj.count)</span><br><span class="line">&#125;, 2000)</span><br><span class="line"></span><br><span class="line">node a.js</span><br><span class="line">a.js-1 1</span><br><span class="line">a.js-2 2</span><br><span class="line">b.js-1 2</span><br><span class="line">a.js-3 3</span><br><span class="line">b.js-2 3</span><br></pre></td></tr></table></figure>
+
+<p>以上代码可以看出，对于对象来说属于浅拷贝。当执行a模块时，首先打印obj.count的值为1，然后通过plusCount方法，再次打印时为2。接着在a模块修改count的值为3，此时在b模块的值也为3。</p>
+<p>3.当使用require命令加载某个模块时，就会运行整个模块的代码。</p>
+<p>4.当使用require命令加载同一个模块时，不会再执行该模块，而是取到缓存之中的值。也就是说，CommonJS模块无论加载多少次，都只会在第一次加载时运行一次，以后再加载，就返回第一次运行的结果，除非手动清除系统缓存。</p>
+<p>5.循环加载时，属于加载时执行。即脚本代码在require的时候，就会全部执行。一旦出现某个模块被”循环加载”，就只输出已经执行的部分，还未执行的部分不会输出。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">3, 4, 5可以使用同一个例子说明</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; b.js</span><br><span class="line">exports.done &#x3D; false</span><br><span class="line">let a &#x3D; require(&#39;.&#x2F;a.js&#39;)</span><br><span class="line">console.log(&#39;b.js-1&#39;, a.done)</span><br><span class="line">exports.done &#x3D; true</span><br><span class="line">console.log(&#39;b.js-2&#39;, &#39;执行完毕&#39;)</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; a.js</span><br><span class="line">exports.done &#x3D; false</span><br><span class="line">let b &#x3D; require(&#39;.&#x2F;b.js&#39;)</span><br><span class="line">console.log(&#39;a.js-1&#39;, b.done)</span><br><span class="line">exports.done &#x3D; true</span><br><span class="line">console.log(&#39;a.js-2&#39;, &#39;执行完毕&#39;)</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; c.js</span><br><span class="line">let a &#x3D; require(&#39;.&#x2F;a.js&#39;)</span><br><span class="line">let b &#x3D; require(&#39;.&#x2F;b.js&#39;)</span><br><span class="line"></span><br><span class="line">console.log(&#39;c.js-1&#39;, &#39;执行完毕&#39;, a.done, b.done)</span><br><span class="line"></span><br><span class="line">node c.js</span><br><span class="line">b.js-1 false</span><br><span class="line">b.js-2 执行完毕</span><br><span class="line">a.js-1 true</span><br><span class="line">a.js-2 执行完毕</span><br><span class="line">c.js-1 执行完毕 true true</span><br></pre></td></tr></table></figure>
+
+<p>仔细说明一下整个过程。</p>
+<ol>
+<li>在Node.js中执行c模块。此时遇到require关键字，执行a.js中所有代码。</li>
+<li>在a模块中exports之后，通过require引入了b模块，执行b模块的代码。</li>
+<li>在b模块中exports之后，又require引入了a模块，此时执行a模块的代码。</li>
+<li>a模块只执行exports.done = false这条语句。</li>
+<li>回到b模块，打印b.js-1, exports, b.js-2。b模块执行完毕。</li>
+<li>回到a模块，接着打印a.js-1, exports, b.js-2。a模块执行完毕</li>
+<li>回到c模块，接着执行require，需要引入b模块。由于在a模块中已经引入过了，所以直接就可以输出值了。</li>
+<li>结束。</li>
+</ol>
+<p>从以上结果和分析过程可以看出，当遇到require命令时，会执行对应的模块代码。当循环引用时，有可能只输出某模块代码的一部分。当引用同一个模块时，不会再次加载，而是获取缓存。</p>
+<h3 id="ES6模块-1"><a href="#ES6模块-1" class="headerlink" title="ES6模块"></a>ES6模块</h3><ol>
+<li>es6模块中的值属于【动态只读引用】。只说明一下复杂数据类型。</li>
+<li>对于只读来说，即不允许修改引入变量的值，import的变量是只读的，不论是基本数据类型还是复杂数据类型。当模块遇到import命令时，就会生成一个只读引用。等到脚本真正执行时，再根据这个只读引用，到被加载的那个模块里面去取值。</li>
+<li>对于动态来说，原始值发生变化，import加载的值也会发生变化。不论是基本数据类型还是复杂数据类型。</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; b.js</span><br><span class="line">export let counter &#x3D; &#123;</span><br><span class="line">  count: 1</span><br><span class="line">&#125;</span><br><span class="line">setTimeout(() &#x3D;&gt; &#123;</span><br><span class="line">  console.log(&#39;b.js-1&#39;, counter.count)</span><br><span class="line">&#125;, 1000)</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; a.js</span><br><span class="line">import &#123; counter &#125; from &#39;.&#x2F;b.js&#39;</span><br><span class="line">counter &#x3D; &#123;&#125;</span><br><span class="line">console.log(&#39;a.js-1&#39;, counter)</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; Syntax Error: &quot;counter&quot; is read-only</span><br></pre></td></tr></table></figure>
+
+<p>虽然不能将counter重新赋值一个新的对象，但是可以给对象添加属性和方法。此时不会报错。这种行为类型与关键字const的用法。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; a.js</span><br><span class="line">import &#123; counter &#125; from &#39;.&#x2F;b.js&#39;</span><br><span class="line">counter.count++</span><br><span class="line">console.log(counter)</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 2</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>循环加载时，ES6模块是动态引用。只要两个模块之间存在某个引用，代码就能够执行。</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; b.js</span><br><span class="line">import &#123;foo&#125; from &#39;.&#x2F;a.js&#39;;</span><br><span class="line">export function bar() &#123;</span><br><span class="line">  console.log(&#39;bar&#39;);</span><br><span class="line">  if (Math.random() &gt; 0.5) &#123;</span><br><span class="line">    foo();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; a.js</span><br><span class="line">import &#123;bar&#125; from &#39;.&#x2F;b.js&#39;;</span><br><span class="line">export function foo() &#123;</span><br><span class="line">  console.log(&#39;foo&#39;);</span><br><span class="line">  bar();</span><br><span class="line">  console.log(&#39;执行完毕&#39;);</span><br><span class="line">&#125;</span><br><span class="line">foo();</span><br><span class="line"></span><br><span class="line">babel-node a.js</span><br><span class="line">foo</span><br><span class="line">bar</span><br><span class="line">执行完毕</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 执行结果也有可能是</span><br><span class="line">foo</span><br><span class="line">bar</span><br><span class="line">foo</span><br><span class="line">bar</span><br><span class="line">执行完毕</span><br><span class="line">执行完毕</span><br></pre></td></tr></table></figure>
+
+<p>由于在两个模块之间都存在引用。因此能够正常执行。</p>
+<p>作者：寸志<br>链接：<a href="https://www.zhihu.com/question/56820346/answer/150724784" target="_blank" rel="noopener">https://www.zhihu.com/question/56820346/answer/150724784</a><br>来源：知乎<br>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>Thank you<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2021/04/02/require%EF%BC%8Cimport%E5%8C%BA%E5%88%AB%EF%BC%9F/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/04/02/%E5%9F%BA%E4%BA%8EGitee+PigGo%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BATypora%E5%9B%BE%E5%BA%8A/" class="archive-article-date">
-  	<time datetime="2021-04-02T14:24:36.133Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-02</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2021/04/02/%E5%9F%BA%E4%BA%8EGitee+PigGo%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BATypora%E5%9B%BE%E5%BA%8A/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">基于Gitee+PigGo快速搭建个人Typora图床</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/04/02/%E5%9F%BA%E4%BA%8EGitee+PigGo%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BATypora%E5%9B%BE%E5%BA%8A/">基于Gitee+PigGo快速搭建个人Typora图床</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/04/02/Vue-mintUI%E5%92%8C%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E4%BD%93%E9%AA%8C_Note/" class="archive-article-date">
-  	<time datetime="2021-04-02T14:22:43.279Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/04/02/Vue-mintUI%E5%92%8C%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E4%BD%93%E9%AA%8C_Note/">Vue-mintUI和微信小程序设计体验_Note</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/04/02/%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E4%BA%91%E6%9C%8D%E5%8A%A1_Note/" class="archive-article-date">
-  	<time datetime="2021-04-02T11:34:25.776Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/04/02/%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E4%BA%91%E6%9C%8D%E5%8A%A1_Note/">项目部署云服务_Note</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/03/06/nodejs%E8%BF%9E%E6%8E%A5mysql%E2%80%94%E2%80%94createPool&createConnection%E5%8C%BA%E5%88%AB/" class="archive-article-date">
-  	<time datetime="2021-03-06T07:28:15.129Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/03/06/nodejs%E8%BF%9E%E6%8E%A5mysql%E2%80%94%E2%80%94createPool&createConnection%E5%8C%BA%E5%88%AB/">nodejs连接mysql——createPool&amp;createConnection区别</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/03/05/Node.js_MySQL%E6%8E%A5%E5%8F%A3_%E9%83%A8%E7%BD%B2%E5%88%B0%E9%98%BF%E9%87%8C%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8/" class="archive-article-date">
-  	<time datetime="2021-03-05T13:51:18.927Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/03/05/Node.js_MySQL%E6%8E%A5%E5%8F%A3_%E9%83%A8%E7%BD%B2%E5%88%B0%E9%98%BF%E9%87%8C%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8/">Node.js_MySQL接口_部署到阿里云服务器</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/01/13/AJAX-note/" class="archive-article-date">
-  	<time datetime="2021-01-13T02:38:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/01/13/AJAX-note/">AJAX-note</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">AJAX</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/01/11/Nodejs%E4%B8%AD%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B-promise/" class="archive-article-date">
-  	<time datetime="2021-01-11T15:19:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-11</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/01/11/Nodejs%E4%B8%AD%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B-promise/">Nodejs中异步编程(promise,回调函数)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">nodeJS:promise</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/01/11/Nodejs%E4%B8%ADMySQL%E7%9A%84%E4%BD%BF%E7%94%A8/" class="archive-article-date">
-  	<time datetime="2021-01-11T15:01:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-11</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/01/11/Nodejs%E4%B8%ADMySQL%E7%9A%84%E4%BD%BF%E7%94%A8/">Nodejs中MySQL的使用</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Nodejs:MySQL</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/01/11/Nodejs%E4%B8%ADMongoDB%E7%9A%84%E4%BD%BF%E7%94%A8/" class="archive-article-date">
-  	<time datetime="2021-01-11T14:46:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-11</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/01/11/Nodejs%E4%B8%ADMongoDB%E7%9A%84%E4%BD%BF%E7%94%A8/">Nodejs中MongoDB的使用</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Nodejs:MongoDB</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/2021/page/2/">2</a><a class="extend next" rel="next" href="/archives/2021/page/2/">Next &amp;raquo;</a>
-    </nav>
   
 
 
@@ -506,8 +426,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
